@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class RestaurantInput extends Component {
   state = {
-    text: ''
+    text: this.props.defaultInputValue || ''
   }
 
   handleChange = e => {
@@ -13,7 +13,7 @@ class RestaurantInput extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.addRestaurant(this.state.text)
+    this.props.handleRestaurant(this.state.text)
     this.setState({
       text: ''
     })
@@ -25,7 +25,7 @@ class RestaurantInput extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Restaurant Name: </label>
           <input type="text" value={this.state.text} onChange={this.handleChange} />
-          <input type="submit" value="Add Restaurant" />
+          <input type="submit"  />
         </form>
       </div>
     );

@@ -13,6 +13,13 @@ export default function manageRestaurants(state = {
         ...state,
         restaurants: [...state.restaurants, restaurant]
       }
+    case 'UPDATE_RESTAURANT':
+      return {
+        restaurants: state.restaurants.map(restaurant => {
+          return restaurant.id === action.restaurant.id ? action.restaurant : restaurant
+        }),
+        reviews: [...state.reviews]
+      }
     case 'DELETE_RESTAURANT':
       return {
         reviews: state.reviews.filter(review => review.restaurantId !== action.id),
