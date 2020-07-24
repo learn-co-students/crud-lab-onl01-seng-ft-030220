@@ -2,33 +2,33 @@
 
 ## Objectives
 
-* Implement a Yelp-like application where users can create and delete both
+Implement a Yelp-like application where users can create and delete both
 restaurants and reviews of each restaurant.
 
-## Introduction
+Implement a Yelp-like application with restaurants and reviews.
 
-In this lab, we will practice creating and removing various items using Redux. We are
+In this lab, we will practice creating and removing various items. We are
 working with two different resources, with each restaurant having many reviews
 and reviews belonging to a restaurant. Similar to the previous Redux delete lab,
 implement container components to connect to your Redux store - one for
 restaurants and one for reviews.
 
-**Hint**: Container components can be nested as children in the same way as any other
+**Hint**: Container components can be nested as children just as any other
 component, even if they aren't actually displaying any visual content.
 
 ## Instructions
 
-1. Start off by working on the components for displaying restaurants. First, you'll need to
+1. Start off by working the components for restaurants. First you'll need to
 create a __RestaurantsContainer__ component that will connect to Redux and pass
 the appropriate props down to its children. Then you will need a
 __RestaurantInput__ component that allows a user to create new restaurants. You
 will then want to create a __Restaurants__ component that displays a list of
 restaurants, and a __Restaurant__ component which is responsible for each
 restaurant (and contains the button to _delete_). Users should also be able to
-delete restaurants. To implement this, you will need to give each restaurant
-an ID.
+delete restaurants, and to implement that you will need to give each restaurant
+an id. the
 
-**Note**: To implement IDs, it may be worth integrating another library in the
+**Note**: To implement ids, it may be worth integrating another library in the
 reducer called cuid. You can see that we already imported it in the reducer
 file for you. The library will generate a unique id for you:
 
@@ -76,4 +76,3 @@ open an input where a user could modify the contents of a specific item. When
 sent to your reducer, instead of _filtering_ you might consider _mapping_ &mdash; i.e.
 an action where all reviews are returned, but if a review's id matches, the
 _newly_ submitted content is returned instead.
-
